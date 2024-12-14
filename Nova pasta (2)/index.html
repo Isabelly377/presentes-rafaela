@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presentes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Presentes</h1>
+    </header>
+    <nav>
+        <ul class="tabs">
+            <li data-tab="camisetas" class="active">Camisetas</li>
+            <li data-tab="calcas">Calças</li>
+            <li data-tab="tenis">Tênis</li>
+        </ul>
+    </nav>
+    <main>
+        <section id="camisetas" class="tab-content active">
+            <h2>Camisetas</h2>
+            <ul>
+                <li>
+                    <img src="shopping.webp" alt="Camiseta Tamanho P">
+                    Camiseta Tamanho P
+                </li>
+                <li>
+                    <img src="shopping (1).webp" alt="Camiseta Tamanho M">
+                    Camiseta Tamanho M
+                </li>
+            </ul>
+        </section>
+        <section id="calcas" class="tab-content">
+            <h2>Calças</h2>
+            <ul>
+                <li>
+                    <img src="1.webp" alt="Calça Tamanho 38">
+                    Calça Tamanho 38
+                </li>
+                <li>
+                    <img src="104002AZC-calca-jeans-reta-araca-azul-claro-minimadeia-jul24-05.webp" alt="Calça Tamanho 40">
+                    Calça Tamanho 40
+                </li>
+            </ul>
+        </section>
+        <section id="tenis" class="tab-content">
+            <h2>Tênis</h2>
+            <ul>
+                <li>
+                    <img src="nike.jfif" alt="Tênis Tamanho 36">
+                    Tênis Tamanho 36
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        const tabs = document.querySelectorAll('.tabs li');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to the clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
